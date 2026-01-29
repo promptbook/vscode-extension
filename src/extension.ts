@@ -41,4 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 }
 
-export function deactivate() {}
+export async function deactivate() {
+  // Shutdown kernel on extension deactivation
+  await PromptbookEditorProvider.shutdownKernel();
+}

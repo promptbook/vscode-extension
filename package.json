@@ -7,7 +7,10 @@
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Notebooks", "Machine Learning"],
+  "categories": [
+    "Notebooks",
+    "Machine Learning"
+  ],
   "activationEvents": [
     "onCustomEditor:promptbook.editor"
   ],
@@ -18,7 +21,9 @@
         "viewType": "promptbook.editor",
         "displayName": "Promptbook",
         "selector": [
-          { "filenamePattern": "*.promptbook" }
+          {
+            "filenamePattern": "*.promptbook"
+          }
         ],
         "priority": "default"
       }
@@ -41,6 +46,8 @@
     "esbuild": "^0.19.0"
   },
   "dependencies": {
-    "@promptbook/core": "workspace:*"
+    "@promptbook/core": "workspace:*",
+    "uuid": "^13.0.0",
+    "zeromq": "^6.5.0"
   }
 }
