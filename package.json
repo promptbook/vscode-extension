@@ -1,0 +1,45 @@
+{
+  "name": "promptbook-vscode",
+  "displayName": "Promptbook",
+  "description": "Natural language notebooks with AI-powered code sync",
+  "version": "0.1.0",
+  "publisher": "promptbook",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Notebooks", "Machine Learning"],
+  "activationEvents": [
+    "onCustomEditor:promptbook.editor"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "promptbook.editor",
+        "displayName": "Promptbook",
+        "selector": [
+          { "filenamePattern": "*.promptbook" }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "promptbook.newNotebook",
+        "title": "Promptbook: New Notebook"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch": "npm run build -- --watch",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.19.0"
+  },
+  "dependencies": {
+    "@promptbook/core": "workspace:*"
+  }
+}
