@@ -67,7 +67,7 @@ export class PromptbookEditorProvider implements vscode.CustomTextEditorProvider
     updateWebview();
   }
 
-  private getHtmlForWebview(webview: vscode.Webview): string {
+  private getHtmlForWebview(_webview: vscode.Webview): string {
     // TODO: Load actual React bundle
     return `
       <!DOCTYPE html>

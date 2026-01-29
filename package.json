@@ -33,7 +33,8 @@
   "scripts": {
     "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
     "watch": "npm run build -- --watch",
-    "package": "vsce package"
+    "package": "vsce package",
+    "lint": "eslint src --max-warnings 0"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
