@@ -1,5 +1,10 @@
 import * as vscode from 'vscode';
-import { KernelManager, PythonSetup, PythonEnvironment, KernelOutput } from './kernel';
+import {
+  KernelManager,
+  PythonSetup,
+  type PythonEnvironment,
+  type KernelOutput,
+} from '@promptbook/core/kernel';
 
 export class PromptbookEditorProvider implements vscode.CustomTextEditorProvider {
   public static readonly viewType = 'promptbook.editor';
